@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>tutorails_plumbing</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="fj_18860352816@163.com">ros</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>base_interfaces_demo</exec_depend>
+  <exec_depend>cpp01_topic</exec_depend>
+  <exec_depend>cpp02_service</exec_depend>
+  <exec_depend>cpp03_action</exec_depend>
+  <exec_depend>cpp04_param</exec_depend>
+  <exec_depend>py01_topic</exec_depend>
+  <exec_depend>py02_service</exec_depend>
+  <exec_depend>py03_action</exec_depend>
+  <exec_depend>py04_param</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
