@@ -1,0 +1,13 @@
+launch:
+- arg:
+    name: "bg_b"
+    default: "255"
+- node:
+    pkg: "turtlesim"
+    exec: "turtlesim_node"
+    param:
+    - 
+      name: "background_b"
+      value: "$(var bg_b)"
+
+# ros2 launch cpp01_launch yaml04_args_launch.yaml bg_b:=50

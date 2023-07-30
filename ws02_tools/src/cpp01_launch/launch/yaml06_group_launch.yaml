@@ -1,0 +1,25 @@
+# 运行该launch文件时，输出信息可能会因为多线程和异步处理而以不同的顺序进行打印，这可能会导致节点的启动顺序在输出中产生变化。
+# 所以查看节点需通过 ros2 node list来查看
+launch:
+- group:
+    - push-ros-namespace:
+        namespace: "g1"
+    - node:
+        pkg: "turtlesim"
+        exec: "turtlesim_node"
+        name: "t1"
+    - node:
+        pkg: "turtlesim"
+        exec: "turtlesim_node"
+        name: "t2"
+- group:
+    - push-ros-namespace:
+        namespace: "g2"
+    - node:
+        pkg: "turtlesim"
+        exec: "turtlesim_node"
+        name: "t3"
+    - node:
+        pkg: "turtlesim"
+        exec: "turtlesim_node"
+        name: "t4"

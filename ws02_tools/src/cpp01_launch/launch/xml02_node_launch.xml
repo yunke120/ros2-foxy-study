@@ -1,0 +1,19 @@
+
+
+<launch>
+    <!-- <node 
+        pkg="turtlesim"
+        exec="turtlesim_node"
+        name="t1"
+        namespace="ns_1"
+        exec_name="my_label"
+    /> -->
+    <node pkg="turtlesim" exec="turtlesim_node" name="t1">
+        <!-- 方式1：设置单个参数 -->
+        <!-- <param name="background_r" value="0" />
+        <param name="background_g" value="0" />
+        <param name="background_b" value="0" /> -->
+        <!-- 方式2：加载yaml文件  -->
+        <!-- <param from="$(find-pkg-share cpp01_launch)/config/t1.yaml"/> -->
+    </node> 
+</launch>

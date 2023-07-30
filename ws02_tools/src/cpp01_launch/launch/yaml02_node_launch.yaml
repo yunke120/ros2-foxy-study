@@ -1,0 +1,21 @@
+launch:
+- node:
+    pkg: "turtlesim"
+    exec: "turtlesim_node"
+    name: "t2"
+    namespace: "ns_2"
+    exec_name: "my_label"
+    param: 
+    # - 
+    #   name: "background_r"
+    #   value: 100
+    # - 
+    #   name: "background_g"
+    #   value: 100
+    # - 
+    #   name: "background_b"
+    #   value: 100
+    -
+      from: "$(find-pkg-share cpp01_launch)/config/t2.yaml"
+    args: "--ros-args --remap __ns:=/xxx/yyy" # 修改命名空间
+      
