@@ -6,6 +6,7 @@ ws01_plumbing/install/
 ws01_plumbing/log/
 
 =/
+bag/
 
 ws01_plumbing/.vscode/settings.json
 ws01_plumbing/=/

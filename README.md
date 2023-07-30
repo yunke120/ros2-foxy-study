@@ -80,7 +80,7 @@
 			"",
 			"class MyNode: public rclcpp::Node{",
 			"public:",
-			"    MyNode():Node(\"my_node_name\"){",
+			"    MyNode():Node(\"MyNode_cpp\"){",
 			"       ",	
 			"    }",
 			"",

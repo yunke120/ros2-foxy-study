@@ -268,8 +268,8 @@ bool Turtle::update(double dt, QPainter& path_painter, const QImage& path_image,
   p->x = pos_.x();
   p->y = canvas_height - pos_.y();
   p->theta = orient_;
-  // p->linear_velocity = std::sqrt(lin_vel_x_ * lin_vel_x_ + lin_vel_y_ * lin_vel_y_);
-  p->linear_velocity = lin_vel_x_;
+  p->linear_velocity = std::sqrt(lin_vel_x_ * lin_vel_x_ + lin_vel_y_ * lin_vel_y_);
+  // p->linear_velocity = lin_vel_x_;
   p->angular_velocity = ang_vel_;
   pose_pub_->publish(std::move(p));
 
