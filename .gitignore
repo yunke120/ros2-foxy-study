@@ -1,17 +1,18 @@
 
-
+ws01_plumbing/.vscode/
 ws01_plumbing/build/
 ws01_plumbing/~/
 ws01_plumbing/install/
 ws01_plumbing/log/
-
+~/.vsocde/logs/20230731T085303/
 =/
+~/
 bag/
 
-ws01_plumbing/.vscode/settings.json
 ws01_plumbing/=/
 
 ws02_tools/build/
 ws02_tools/install/
 ws02_tools/log/
+ws02_tools/my_bag/
 
