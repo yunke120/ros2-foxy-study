@@ -1,0 +1,19 @@
+<!-- 
+    需求：创建一个盒装机器人
+    长1 宽1 高0.1
+ -->
+
+ <!-- 根标签 -->
+ <robot name="iii-robot"> 
+    <!-- 连杆 -->
+    <link name="base_link">
+        <!-- 可视化 -->
+        <visual>
+            <!-- 几何外观 -->
+            <geometry>
+                <!-- 长方体 -->
+                <box size="1.0 0.5 0.1"/>
+            </geometry>
+        </visual>
+    </link>
+ </robot>
