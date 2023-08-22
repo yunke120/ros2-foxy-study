@@ -51,10 +51,10 @@ def generate_launch_description():
                 parameters=[{"robot_description":p_value}]
     )
 
-    joint_state_pub = Node(
-        package="joint_state_publisher",
-        executable="joint_state_publisher",
-    )
+    # joint_state_pub = Node(
+    #     package="joint_state_publisher",
+    #     executable="joint_state_publisher",
+    # )
 
 
 
@@ -64,4 +64,22 @@ def generate_launch_description():
         arguments=["-d", get_package_share_directory("cpp06_urdf") + "/rviz/urdf.rviz"]    
     )
 
-    return LaunchDescription([model, rviz2, robot_state_pub, joint_state_pub])
+    # return LaunchDescription([model, rviz2, robot_state_pub, joint_state_pub])
+    return LaunchDescription([model, rviz2, robot_state_pub])
+
+
+'''
+    
+    问题描述： 通过joint_state_publisher_gui 让关节运行到指定位置后，关节存在抖动，在初始位置和指定位置之间抖动
+    解决：不再启动 joint_state_publisher 节点
+    原因：1. joint_state_publisher与joint_state_publisher_gui都会发布非固定关节的运动信息
+         2. robot_state_publisher会订阅关节的运动信息，并生成坐标变换数据广播
+         3. joint_state_publisher与joint_state_publisher_gui有一个存在时就会发布关节运动信息，进而就能生成坐标变换
+            当两个都不启动时，坐标树生成不了，机器人模型显示异常
+            当两个都存在时，joint_state_publisher发布初始关节姿态信息
+                         joint_state_publisher_gui发布指定位置信息
+    运行：
+    1. $ ros2 run joint_state_publisher_gui joint_state_publisher_gui
+    2. $ ros2 launch cpp06_urdf display.launch.py model:=$(ros2 pkg prefix --share cpp06_urdf)/urdf/urdf/demo03_joint.urdf
+
+'''
