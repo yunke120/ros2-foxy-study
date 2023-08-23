@@ -1,0 +1,27 @@
+
+
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- 声明参数 -->
+    <xacro:property name="CAMERA_LENGTH" value="0.01" />
+    <xacro:property name="CAMERA_WIDTH" value="0.08" />
+    <xacro:property name="CAMERA_HEIGHT" value="0.01" />
+    <!-- 关节偏移量 -->
+    <xacro:property name="CAMERA_JOINT_X" value="${CAR_LENGTH/2 - 0.01}" />
+    <xacro:property name="CAMERA_JOINT_Y" value="0" />
+    <xacro:property name="CAMERA_JOINT_Z" value="${CAR_HEIGHT/2 + CAMERA_HEIGHT/2}" />
+
+    <link name="camera">
+        <visual>
+            <geometry>
+                <box size="${CAMERA_LENGTH} ${CAMERA_WIDTH} ${CAMERA_HEIGHT}"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="camera2base_link" type="fixed">
+        <parent link="base_link"/>
+        <child link="camera"/>
+        <origin xyz="${CAMERA_JOINT_X} ${CAMERA_JOINT_Y} ${CAMERA_JOINT_Z}" />
+    </joint>
+</robot>

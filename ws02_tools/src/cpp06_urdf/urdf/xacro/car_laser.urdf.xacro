@@ -1,0 +1,28 @@
+
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="LASER_RADIUS" value="0.03" />
+    <xacro:property name="LASER_HEIGHT" value="0.025" />
+
+    <xacro:property name="LASER_JOINT_X" value="0" />
+    <xacro:property name="LASER_JOINT_Y" value="0" />
+    <xacro:property name="LASER_JOINT_Z" value="${CAR_HEIGHT/2 + LASER_HEIGHT/2}" />
+
+    <link name="laser">
+        <visual>
+            <geometry>
+                <cylinder radius="${LASER_RADIUS}" length="${LASER_HEIGHT}"/>
+            </geometry>
+
+            <material name="blue">
+                <color rgba="0.1 0.8 0.1 0.8"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="laser2base_link" type="fixed">
+        <parent link="base_link"/>
+        <child link="laser"/>
+        <origin xyz="${LASER_JOINT_X} ${LASER_JOINT_Y} ${LASER_JOINT_Z}"/>
+    </joint>
+</robot>
